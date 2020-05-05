@@ -52,7 +52,13 @@
 // StringIntMap where each string is mapped to its number of occurences.
 StringIntMap makeWordCounts(const StringVec& words) {
   StringIntMap wordcount_map;
-
+  for(auto word : words){
+    if(!wordcount_map[word]){
+      wordcount_map[word] = 1;
+    } else {
+      wordcount_map[word]++;
+    }
+  }
   // =================================================
   // EXERCISE 1 WORKSPACE: YOUR CODE HERE
   // =================================================
